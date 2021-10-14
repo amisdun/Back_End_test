@@ -8,7 +8,7 @@ export const fetchPostWithTags = async (tags) => {
 		const {
 			data: { posts },
 		} = await axios.get(`${process.env.BASE_ENDPOINT}?tag=${tag}`);
-		postResults.push(posts);
+		postResults.push(...posts);
 	}
 
 	// Using Set to return Unique post
